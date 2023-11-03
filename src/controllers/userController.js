@@ -1,5 +1,19 @@
-const knex = require('../database/connection');
+const AppError = require('../errors/AppError');
+const { executeCreate } = require('../services/userService');
+const createUser = ( async(req, res) => {
+  const { name, email, password } = req.body;
+  try {
+    const createdUser = await executeCreate(name, email, password);
+    return res.status(201).json({ mensage: 'User registered successfully' });
+  } catch (error) {
+    if (error instanceof AppError) {
+      return res.status(error.statusCode).json({ message: error.message });
+    }
+    return res.status(500).json({ message: 'Server error.' });
+  }
 
+
+});
 
 const findAllUsers = ( async(req, res) => {
   const allUsers = await knex('usuarios').select('*');
@@ -7,5 +21,7 @@ const findAllUsers = ( async(req, res) => {
 });
 
 module.exports = {
-  findAllUsers
+  createUser,
+  findAllUsers,
+
 }
