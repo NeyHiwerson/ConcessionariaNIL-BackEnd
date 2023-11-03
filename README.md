@@ -11,3 +11,5 @@ npm install -D nodemon
 npm install --save-dev jest
 
 servidor Cyclic -> https://wild-lion-khakis.cyclic.app
+database postgres -> silly.db.elephantsql.com
+
