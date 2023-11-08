@@ -16,6 +16,10 @@ password: Joi.string().min(6).required().messages({
   'string.base': 'The password must contain valid characters.',
   'string.min': 'The password must at least 6 characters.',
 }),
+userAdm: Joi.boolean().required().messages({
+  'any.required': 'The field userAdm is required.',
+  'boolean.base': 'The field userAdm must be a boolean.',
+}),
 });
 
 
