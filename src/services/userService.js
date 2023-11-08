@@ -1,7 +1,8 @@
 const bcrypt = require('bcrypt');
 const { insert, findAll } = require('../repositories/userRepository');
 const AppError = require('../errors/AppError');
-const { findByEmail } = require('../utils/userUtils');
+const { findByEmail, findUserById } = require('../utils/userUtils');
+const { generateToken } = require('../utils/auth');
 
 const executeCreate = async (name, email, password, userAdm) => {
     try {
@@ -20,12 +21,29 @@ const executeCreate = async (name, email, password, userAdm) => {
     }
 };
 
-const executefindUsers = async () => {
+const executeLogin = async (email, password) => {
+    const user = await findByEmail(email);
+    if (!user) {
+        throw new AppError('Email or password invalid.', 401);
+    }
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    if (!passwordMatch) {
+        throw new AppError('Email or password invalid.', 401);
+    }
+    return generateToken(user.id);
+};
+
+const executefindUsers = async (userId) => {
+    const user = await findUserById(userId);
+    if (!user.useradm){
+        throw new AppError('You are not authorized to access this resource.', 401);
+    }
     const allUsers = await findAll();
     return allUsers;
 };
 
 module.exports = {
     executeCreate,
+    executeLogin,
     executefindUsers,
 };

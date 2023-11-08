@@ -6,15 +6,21 @@ const insert = async(name, email, password, useradm) => {
 };
 
 const findAll = async() => {
-  return await knex('users').select('*');
+  return await knex('users').select('*'); // Retorna todos os registros
 };
 
 const findEmail = async(email) => {
   return await knex('users').where('email', email).first();  // Retorna o primeiro registro encontrado.
 };
 
+const findUser = async(id) => {
+  return await knex('users').where('id_user', id).first();  // Retorna o primeiro registro encontrado.
+
+};
+
 module.exports = {
   insert,
   findAll,
-  findEmail
+  findEmail,
+  findUser
 }
