@@ -13,8 +13,8 @@ const findEmail = async(email) => {
   return await knex('users').where('email', email).first();  // Retorna o primeiro registro encontrado.
 };
 
-const findUser = async(id) => {
-  return await knex('users').where('id_user', id).first();  // Retorna o primeiro registro encontrado.
+const findUser = async(id_user) => {
+  return await knex('users').where('id_user', id_user).first();  // Retorna o primeiro registro encontrado.
 
 };
 

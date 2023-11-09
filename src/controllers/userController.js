@@ -20,7 +20,7 @@ const loginUser = async (req, res) => {
 
     try {
         const token = await executeLogin(email, password);
-        return res.status(200).json(token);
+        return res.status(200).json({ type: 'Bearer', token });
     } catch (error) {
         if (error instanceof AppError) {
             return res.status(error.statusCode).json({ message: error.message });
