@@ -30,10 +30,10 @@ database postgres -> silly.db.elephantsql.com
 ## Justificativa
   #### A concessionaria possuia apenas 1 loja e não tinha software de sistema de gerenciamento, fazendo todo cadastro de cliente e carro atraves de formularios de papel manualmente e enviando para o contador formalizar a venda e gerar a nota fiscal de compra do veiculo. Esse procedimento além de demorado é tambem de custo elevado e a loja não tem presença online pois não possuia site. A concessionaria esta abrindo uma 2° loja e quer um software para gerenciar seu estoque, clientes, registro de vendas, emitir NFe e um site para que seus clientes possam ver seu estoque disponível online.
 
-- ## Restições
-    - Orçamento limitado
-    - Tempo: data de entrega 26/02/2024 - inauguração Loja2
-    - Disponibilidade de recursos humanos extras para o desenvolvimento.
+## Restições
+  - Orçamento limitado
+  - Tempo: data de entrega 26/02/2024 - inauguração Loja2
+  - Disponibilidade de recursos humanos extras para o desenvolvimento.
 
 ## Steakholders do projeto
   - Cliente do projeto: Claudia Werlich
@@ -44,6 +44,8 @@ database postgres -> silly.db.elephantsql.com
       - Lorenzo
       - Ney Hiwerson Missias Ribeiro
 
+---
+---
 ## Site – Tem
 - Exibição do catálogo dos carros
 - Exibição de detalhes dos veículos
@@ -55,6 +57,9 @@ database postgres -> silly.db.elephantsql.com
 - Setor para peças ou reparos
 - Compras online (checkout)
 - Fornecedores diferentes
+
+---
+---
 ## Concessionária - Tem
 - Cadastro de Funcionários Clientes ; Automóveis;
 - Exibição de detalhes de veículos e clientes
@@ -69,6 +74,8 @@ database postgres -> silly.db.elephantsql.com
 - Setor de peças e oficinas de reparos
 - Área de reclamação de clientes
 
+---
+---
 #  Requisitos Funcionais:
 ## Site
 - RF1: O site deve exibir uma lista de carros disponíveis com detalhes (modelo, ano, preço).
