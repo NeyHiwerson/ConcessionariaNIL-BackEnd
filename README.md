@@ -47,7 +47,7 @@ database postgres -> silly.db.elephantsql.com
 ## Site – Tem
 - Exibição do catálogo dos carros
 - Exibição de detalhes dos veículos
-- Formulário para contato
+- Formulário para contato para duvidas e reclamações
 - Link whatsapp para contato direto
 - Pesquisa avançada
 ## Site - Não tem
@@ -64,6 +64,7 @@ database postgres -> silly.db.elephantsql.com
 - Consulta de cadastro de cliente
 - Conclusão de venda com emissão de NFE
 - Registro de venda
+- Formulário para contato para duvidas e reclamações
 ## Concessionária - Não tem
 - Setor de peças e oficinas de reparos
 - Área de reclamação de clientes
@@ -71,7 +72,7 @@ database postgres -> silly.db.elephantsql.com
 #  Requisitos Funcionais:
 ## Site
 - RF1: O site deve exibir uma lista de carros disponíveis com detalhes (modelo, ano, preço).
-- RF2: Os usuários devem poder filtrar carros com base em critérios como marca, modelo, ano, etc.
+- RF2: Os usuários devem poder filtrar carros com base em critérios como marca, modelo, ano e valor.
 - RF3: O site deve permitir que os usuários solicitem informações adicionais sobre um carro específico por meio de um formulário de contato.
 - RF4: O site deve possuir um emblema wathsapp fixo no canto inferior direiro durante toda a navegação onde o cliente podera solicitar ajuda, exceto quando estiver vendo informações especificas de um veiculo que se ele apertar no emblema wathsapp vai ser pré carregada as informações do veiculo e anexada a mensagem.
 - RF5: O site deve conter informações do endereço das nossas lojas assim como mapa da localização e link para abrir aplicativos gps para chegar ao local.
