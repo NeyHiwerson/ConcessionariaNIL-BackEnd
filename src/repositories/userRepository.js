@@ -1,8 +1,11 @@
 const knex = require('../database/connection');
 
-const insert = async(name, email, password, useradm) => {
-  console.log("no repository"+ name, email, password, useradm);
-  return await knex('users').insert({name, email, password, useradm}).returning(['id_user', 'name', 'email']);
+const insert = async(nome, email, password, cargo, dt_nascimento, telefone,
+  ctt_emergencia, filial_atual) => {
+  console.log("no repository"+ nome, email, password, cargo, dt_nascimento, telefone,
+  ctt_emergencia, filial_atual);
+  return await knex('colaborador').insert({nome, email, password, cargo, dt_nascimento, telefone,
+    ctt_emergencia, filial_atual}).returning(['id_user', 'nome', 'email']);
 };
 
 const findAll = async() => {

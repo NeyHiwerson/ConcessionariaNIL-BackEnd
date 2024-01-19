@@ -4,14 +4,16 @@ const AppError = require('../errors/AppError');
 const { findByEmail, findUserById } = require('../utils/userUtils');
 const { generateToken } = require('../utils/auth');
 
-const executeCreate = async (name, email, password, userAdm) => {
+const executeCreate = async (nome, email, password, cargo, dt_nascimento, telefone,
+    ctt_emergencia, filial_atual) => {
     try {
         const findEmail = await findByEmail(email);
         if (findEmail) {
             throw new AppError('Email already exists.', 400); // Lança uma exceção genérica
         }
         const encriptPassword = await bcrypt.hash(password, 10);
-        const user = await insert(name, email, encriptPassword, userAdm);
+        const user = await insert(nome, email, encriptPassword, cargo, dt_nascimento, telefone,
+            ctt_emergencia, filial_atual);
         return user[0];
     } catch (error) {
         if (error instanceof AppError) {
