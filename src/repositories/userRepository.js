@@ -4,7 +4,7 @@ const insert = async(nome, email, password, cargo, dt_nascimento, telefone,
   ctt_emergencia, filial_atual) => {
   console.log("no repository"+ nome, email, password, cargo, dt_nascimento, telefone,
   ctt_emergencia, filial_atual);
-  return await knex('users').insert({nome, email, password, cargo, dt_nascimento, telefone,
+  return await knex('colaborador').insert({nome, email, password, cargo, dt_nascimento, telefone,
     ctt_emergencia, filial_atual}).returning(['id_user', 'nome', 'email']);
 };
 
