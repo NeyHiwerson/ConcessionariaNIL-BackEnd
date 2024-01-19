@@ -19,16 +19,17 @@ database postgres -> silly.db.elephantsql.com
 # Escopo do Projeto
 
 ## Plano de Gerenciamento do Projeto
-??
+- ScrumBan
 
-## Documentação dos Requisoitos
+## Documentação dos Requisitos
   ### Site -> Para exibição online do estoque.
-  ### PDV -> Para gerenciar estoque, clientes, vendas e NFe.
+  ### PDV Concessionária -> Para gerenciar estoque, clientes, vendas e NFe.
   ### BD -> Para persistir as informaçoes.
-  ### API -> Para integrar Site, PDV e BD.
+  ### Bucket -> Banco de imagens.
+  ### API -> Para integrar Site, PDV, Bucket e BD.
 
-## Justificativa
-  #### A concessionaria possuia apenas 1 loja e não tinha software de sistema de gerenciamento, fazendo todo cadastro de cliente e carro atraves de formularios de papel manualmente e enviando para o contador formalizar a venda e gerar a nota fiscal de compra do veiculo. Esse procedimento além de demorado é tambem de custo elevado e a loja não tem presença online pois não possuia site. A concessionaria esta abrindo uma 2° loja e quer um software para gerenciar seu estoque, clientes, registro de vendas, emitir NFe e um site para que seus clientes possam ver seu estoque disponível online.
+## Justificativa (Genérica)
+  #### A concessionária possuia apenas 1 loja e não tinha software de sistema de gerenciamento, fazendo todo cadastro de cliente e carro atraves de formularios de papel manualmente e enviando para o contador formalizar a venda e gerar a nota fiscal de compra do veiculo. Esse procedimento além de demorado é tambem de custo elevado e a loja não tem presença online pois não possuia site. A concessionaria esta abrindo uma 2° loja e quer um software para gerenciar seu estoque, clientes, registro de vendas, emitir NFe e um site para que seus clientes possam ver seu estoque disponível online.
 
 ## Restições
   - Orçamento limitado
@@ -49,9 +50,10 @@ database postgres -> silly.db.elephantsql.com
 ## Site – Tem
 - Exibição do catálogo dos carros
 - Exibição de detalhes dos veículos
+- Exibição de carrossel de imagens para cada veículo
 - Formulário para contato para duvidas e reclamações
 - Link whatsapp para contato direto
-- Pesquisa avançada
+- Pesquisa avançada: utilização de filtros
 ## Site - Não tem
 - Cadastro do cliente
 - Setor para peças ou reparos
@@ -61,7 +63,7 @@ database postgres -> silly.db.elephantsql.com
 ---
 ---
 ## Concessionária - Tem
-- Cadastro de Funcionários Clientes ; Automóveis;
+- Cadastro de Funcionários, Clientes e Veículos;
 - Exibição de detalhes de veículos e clientes
 - Área de atendimento a clientes online
 - Pesquisas avançadas de clientes e veículos
@@ -78,8 +80,24 @@ database postgres -> silly.db.elephantsql.com
 ---
 #  Requisitos Funcionais:
 ## Site
-- RF1: O site deve exibir uma lista de carros disponíveis com detalhes (modelo, ano, preço).
-- RF2: Os usuários devem poder filtrar carros com base em critérios como marca, modelo, ano e valor.
+- RF1: O site deve exibir uma lista de veículos disponíveis com detalhes (modelo, ano, preço).
+- RF2: Os usuários devem poder filtrar informações veículos com base em critérios como marca, modelo, ano e valor.
 - RF3: O site deve permitir que os usuários solicitem informações adicionais sobre um carro específico por meio de um formulário de contato.
-- RF4: O site deve possuir um emblema wathsapp fixo no canto inferior direiro durante toda a navegação onde o cliente podera solicitar ajuda, exceto quando estiver vendo informações especificas de um veiculo que se ele apertar no emblema wathsapp vai ser pré carregada as informações do veiculo e anexada a mensagem.
+- RF4: O site deve possuir um ícone wathsapp fixo no canto inferior direiro durante toda a navegação onde o cliente podera solicitar ajuda, exceto quando estiver vendo informações especificas de um veiculo que se ele apertar no ícone wathsapp vai ser pré carregada as informações do veiculo e anexada a mensagem.
 - RF5: O site deve conter informações do endereço das nossas lojas assim como mapa da localização e link para abrir aplicativos gps para chegar ao local.
+
+## Sistema Concessionária
+- RF6: Página de login
+- RF7: Página de cadastro do vendedor
+- RF8: Página cadastro do cliente
+- RF9: Página cadastro de novos carros no sistema
+- RF10: Página de registro de venda
+- RF11: Página de contato para duvidas e reclamações
+
+---
+#  Requisitos Não Funcionais:
+## Site
+- RF1: 
+
+## Sistema Concessionária
+- RF1: 
