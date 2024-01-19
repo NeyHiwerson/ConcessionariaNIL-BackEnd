@@ -4,8 +4,8 @@ const findByEmail = (email) => {
   return findEmail(email);
 };
 
-const findUserById = (id_user) => {
-  return findUser(id_user);
+const findUserById = (id_colaborador) => {
+  return findUser(id_colaborador);
 };
 
 

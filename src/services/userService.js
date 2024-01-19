@@ -32,7 +32,7 @@ const executeLogin = async (email, password) => {
     if (!passwordMatch) {
         throw new AppError('Email or password invalid.', 401);
     }
-    return generateToken(user.id_user);
+    return generateToken(user.id_colaborador);
 };
 
 const executefindUsers = async (userId) => {

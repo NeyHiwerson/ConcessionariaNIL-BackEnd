@@ -21,9 +21,9 @@ const user = Joi.object({
         'string.base': 'The field name must be a text.',
         'string.empty': 'The field name cannot be empty.',
     }),
-    dt_nascimento: Joi.date().required().messages({
+    dt_nascimento: Joi.string().required().messages({
         'any.required': 'The field dt_nascimento is required.',
-        'date.base': 'The field dt_nascimento must be a date object.',
+        'string.base': 'The field dt_nascimento must be a string object.',
         'date.empty': 'The field dt_nascimento cannot be empty.',
     }),
     telefone: Joi.string().required().messages({
