@@ -8,7 +8,7 @@ const findAllVeiculos = async (req, res) => {
       const allMedia = await executefindMedia();
       let veiculos = [];
       allVeiculos.forEach(veiculo => {
-        const { id_veiculo, nome, motor, tipo, valvulas, combustivel, cambio, valor, quilometragem, cidade, estado, ano_fabricacao, ano_modelo } = veiculo;
+        const { id_veiculo, modelo, marca, motor, tipo, cor, valvulas, combustivel, cambio, valor, quilometragem, cidade, estado, ano_fabricacao, ano_modelo } = veiculo;
 
         // Encontrar o id_media correspondente no allVeiculoMedia
         const veiculoMedia = allVeiculoMedia.find(vm => vm.id_veiculo === id_veiculo);
@@ -21,9 +21,11 @@ const findAllVeiculos = async (req, res) => {
                 // Adicionar os atributos do veículo e do link_1 ao objeto final
                 const veiculoCompleto = {
                     id_veiculo,
-                    nome,
+                    modelo,
+                    marca,
                     motor,
                     tipo,
+                    cor,
                     valvulas,
                     combustivel,
                     cambio,
