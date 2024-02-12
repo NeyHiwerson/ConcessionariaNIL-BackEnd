@@ -8,7 +8,6 @@ const findUserById = (id_colaborador) => {
   return findUser(id_colaborador);
 };
 
-
 module.exports = {
   findByEmail,
   findUserById

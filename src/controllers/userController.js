@@ -19,7 +19,6 @@ const createUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
     const { email, password } = req.body;
-
     try {
         const token = await executeLogin(email, password);
         return res.status(200).json({ type: 'Bearer', token });
@@ -35,7 +34,6 @@ const loginUser = async (req, res) => {
 const findAllUsers = async (req, res) => {
     try {
         const userId = req.id_user;
-        console.log(userId);
         const allUsers = await executefindUsers(userId);
         return res.json(allUsers);
     } catch (error) {

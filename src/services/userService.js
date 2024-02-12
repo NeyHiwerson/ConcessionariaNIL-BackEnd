@@ -9,7 +9,7 @@ const executeCreate = async (nome, email, password, cargo, dt_nascimento, telefo
     try {
         const findEmail = await findByEmail(email);
         if (findEmail) {
-            throw new AppError('Email already exists.', 400); // Lança uma exceção genérica
+            throw new AppError('Email already exists.', 400);
         }
         const encriptPassword = await bcrypt.hash(password, 10);
         const user = await insert(nome, email, encriptPassword, cargo, dt_nascimento, telefone,
@@ -17,9 +17,9 @@ const executeCreate = async (nome, email, password, cargo, dt_nascimento, telefo
         return user[0];
     } catch (error) {
         if (error instanceof AppError) {
-            throw error; // Lança a exceção para ser tratada no controlador
+            throw error;
         }
-        throw new AppError('Server error.', 500); // Lança uma exceção genérica
+        throw new AppError('Server error.', 500);
     }
 };
 
