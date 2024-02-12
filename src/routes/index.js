@@ -4,6 +4,8 @@ const estoqueRoutes = require('./estoqueRoutes');
 const userRoutes = require('./userRoutes');
 const validateBody = require('../middlewares/validateBody');
 const { validateToken } = require('../middlewares/validateToken');
+const { duvidas: duvidasSchema } = require('../schemas/duvidas');
+const { createDuvida } = require('../controllers/duvidasController');
 const { user: userSchema, login: loginSchema } = require('../schemas/user');
 const { createUser, loginUser } = require('../controllers/userController');
 
@@ -11,6 +13,7 @@ const { createUser, loginUser } = require('../controllers/userController');
 routes.get('/', (req, res) => {
   return res.status(200).json({ mensage: 'NILmultimarcas ta on no server' });
 });
+routes.post('/duvidas', validateBody(duvidasSchema), createDuvida);
 
 routes.use('/estoque', estoqueRoutes);
 
