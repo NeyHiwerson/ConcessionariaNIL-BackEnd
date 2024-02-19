@@ -37,7 +37,7 @@ const executeLogin = async (email, password) => {
 
 const executefindUsers = async (userId) => {
     const user = await findUserById(userId);
-    if (!user.useradm){
+    if (!user.user_adm){
         throw new AppError('You are not authorized to access this resource.', 401);
     }
     const allUsers = await findAll();

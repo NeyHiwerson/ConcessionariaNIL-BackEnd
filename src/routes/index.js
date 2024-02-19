@@ -2,6 +2,7 @@ const { Router } = require('express');
 const routes = Router();
 const estoqueRoutes = require('./estoqueRoutes');
 const userRoutes = require('./userRoutes');
+const clienteRoutes = require('./clienteRoutes');
 const validateBody = require('../middlewares/validateBody');
 const { validateToken } = require('../middlewares/validateToken');
 const { duvidas: duvidasSchema } = require('../schemas/duvidas');
@@ -23,5 +24,7 @@ routes.post('/login', validateBody(loginSchema), loginUser);
 routes.use(validateToken);
 
 routes.use('/user', userRoutes);
+
+routes.use('/cliente', clienteRoutes);
 
 module.exports = routes;
