@@ -38,7 +38,8 @@ const editVeiculo = async (req, res) => {
         const updatedVeiculo = await executeUpdateVeiculo(veiculoId, codigo_renavam, placa, ano_fabricacao, ano_modelo, exercicio_atual, marca, modelo, versao, especie, tipo, chassi, cor, combustivel, categoria, potencia, motor, valvulas, cambio, peso, eixos, carroceria, lotacao, capacidade, quilometragem, portas, cidade, estado, nome, cpfcnpj, valor, disponivel);
         //buscar veiculoMedia
         const veiculoMedia = await executeGetVeiculoMedia(veiculoId);
-        const updatedMedia = await executeUpdateMedia(veiculoMedia.id_media, link_1, link_2, link_3, link_4, link_5, link_6, link_7, link_8, link_9, link_10);
+        const {id_media} = veiculoMedia;
+        const updatedMedia = await executeUpdateMedia(id_media, link_1, link_2, link_3, link_4, link_5, link_6, link_7, link_8, link_9, link_10);
         const veiculoEditado = {
             ...updatedVeiculo,
             link_1: updatedMedia.link_1,
