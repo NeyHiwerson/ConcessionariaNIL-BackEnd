@@ -4,6 +4,7 @@ const estoqueRoutes = require('./estoqueRoutes');
 const userRoutes = require('./userRoutes');
 const veiculoRoutes = require('./veiculoRoutes');
 const clienteRoutes = require('./clienteRoutes');
+const enderecoRoutes = require('./enderecoRoutes');
 const validateBody = require('../middlewares/validateBody');
 const { validateToken } = require('../middlewares/validateToken');
 const { duvidas: duvidasSchema } = require('../schemas/duvidas');
@@ -29,5 +30,7 @@ routes.use('/user', userRoutes);
 routes.use('/veiculo',veiculoRoutes);
 
 routes.use('/cliente', clienteRoutes);
+
+routes.use('/endereco', enderecoRoutes);
 
 module.exports = routes;
