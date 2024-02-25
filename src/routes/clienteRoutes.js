@@ -10,6 +10,6 @@ routes.post('/busca', validateBody(clienteSchema), findCliente)
 
 routes.post('/', createCliente)
 
-routes.post('/:id', validateIdParam(idParamSchema), updateCliente)
+routes.put('/:id', validateIdParam(idParamSchema), updateCliente)
 
 module.exports = routes;
