@@ -25,8 +25,16 @@ const findEnderecos = async (id_cliente) => {
     return enderecos;
 };
 
+const updateEndereco = async (id_endereco, rua, numero, complemento, bairro, cep, tipo_endereco, cidade, uf_estado) => {
+  return await knex('endereco')
+    .where({ id_endereco })
+    .update({ rua, numero, complemento, bairro, cep, tipo_endereco, cidade, uf_estado })
+    .returning(['id_endereco', 'rua', 'numero', 'complemento', 'bairro', 'cep', 'tipo_endereco', 'cidade', 'uf_estado']);
+};
+
 module.exports = {
   createEndereco,
   createClienteEndereco,
-  findEnderecos
+  findEnderecos,
+  updateEndereco
 };
