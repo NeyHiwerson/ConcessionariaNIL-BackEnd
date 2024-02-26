@@ -1,7 +1,7 @@
 const knex = require('../database/connection');
 
-const findAllVeiculos = async() => {
-  return await knex('veiculo').select('*');
+const findAllVeiculos = async () => {
+  return await knex('veiculo').select('*').where('disponivel', true);
 };
 
 const findAllVeiculoMedia = async() => {
