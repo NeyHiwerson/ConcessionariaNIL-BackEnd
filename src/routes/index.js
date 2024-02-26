@@ -11,6 +11,7 @@ const { duvidas: duvidasSchema } = require('../schemas/duvidas');
 const { createDuvida } = require('../controllers/duvidasController');
 const { user: userSchema, login: loginSchema } = require('../schemas/user');
 const { createUser, loginUser } = require('../controllers/userController');
+const { createVenda } = require('../controllers/vendaController');
 
 
 routes.get('/', (req, res) => {
@@ -32,5 +33,7 @@ routes.use('/veiculo',veiculoRoutes);
 routes.use('/cliente', clienteRoutes);
 
 routes.use('/endereco', enderecoRoutes);
+
+routes.post('/venda', createVenda)
 
 module.exports = routes;

@@ -1,5 +1,4 @@
 const { findAllVeiculos, findAllVeiculoMedia, findAllMedia } = require('../repositories/veiculosRepository');
-const AppError = require('../errors/AppError');
 
 const executefindVeiculos = async () => {
   const allVeiculos = await findAllVeiculos();

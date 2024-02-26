@@ -18,9 +18,14 @@ const findUser = async(id_colaborador) => {
   return await knex('colaborador').where('id_colaborador', id_colaborador).first();
 };
 
+const findUserByUserId = async(id_colaborador) => {
+  return await knex('colaborador').where('id_colaborador', id_colaborador).select('id_colaborador', 'nome', 'cargo', 'telefone', 'filial_atual');
+}
+
 module.exports = {
   insert,
   findAll,
   findEmail,
-  findUser
+  findUser,
+  findUserByUserId
 }

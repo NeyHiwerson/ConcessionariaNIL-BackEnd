@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const { insert, findAll } = require('../repositories/userRepository');
+const { insert, findAll, findUserByUserId } = require('../repositories/userRepository');
 const AppError = require('../errors/AppError');
 const { findByEmail, findUserById } = require('../utils/userUtils');
 const { generateToken } = require('../utils/auth');
@@ -44,8 +44,14 @@ const executefindUsers = async (userId) => {
     return allUsers;
 };
 
+const executeFindUser = async (userId) => {
+    const user = await findUserByUserId(userId);
+    return user[0];
+};
+
 module.exports = {
     executeCreate,
     executeLogin,
     executefindUsers,
+    executeFindUser
 };

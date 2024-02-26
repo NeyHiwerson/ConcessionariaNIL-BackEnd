@@ -14,14 +14,12 @@ const findEnderecos = async (id_cliente) => {
   const clienteEnderecos = await knex('cliente_endereco')
       .where({ id_cliente })
       .select('id_endereco');
-  console.log(clienteEnderecos);
     if (clienteEnderecos.length == 0) {
       return [];
     }
     const idEnderecos = clienteEnderecos.map((row) => row.id_endereco);
     const enderecos = await knex('endereco')
       .whereIn('id_endereco', idEnderecos);
-  console.log(enderecos);
     return enderecos;
 };
 

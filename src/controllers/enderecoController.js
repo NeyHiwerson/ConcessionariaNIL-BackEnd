@@ -5,7 +5,6 @@ const { executeFindEnderecos, executeUpdateEndereco } = require('../services/end
 const createEndereco = async (req, res) => {
   const { id: id_cliente } = req.params;
   const { rua, numero, complemento, bairro, cep, tipo_endereco, cidade, uf_estado} = req.body
-  console.log(rua, numero, complemento, bairro, cep, tipo_endereco, cidade, uf_estado);
   try {
     const endereco = await executeCreateEndereco(rua, numero, complemento, bairro, cep, tipo_endereco, cidade, uf_estado);
     const { id_endereco } = endereco;
@@ -21,7 +20,6 @@ const createEndereco = async (req, res) => {
 
 const findEnderecos = async (req, res) => {
   const { id: id_cliente } = req.params;
-  console.log(id_cliente);
   try {
     const enderecos = await executeFindEnderecos(id_cliente);
     res.status(200).json(enderecos);

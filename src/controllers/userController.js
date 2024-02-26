@@ -1,5 +1,5 @@
 const AppError = require('../errors/AppError');
-const { executeCreate, executeLogin, executefindUsers } = require('../services/userService');
+const { executeCreate, executeLogin, executefindUsers, executeFindUser } = require('../services/userService');
 
 const createUser = async (req, res) => {
     const { nome, email, password, cargo, dt_nascimento, telefone,
@@ -45,8 +45,15 @@ const findAllUsers = async (req, res) => {
     }
 };
 
+const findUser = async (req, res) => {
+    const id = req.id_user;
+    const user = await executeFindUser(id);
+    res.status(200).json(user);
+};
+
 module.exports = {
     createUser,
     loginUser,
     findAllUsers,
+    findUser
 };
